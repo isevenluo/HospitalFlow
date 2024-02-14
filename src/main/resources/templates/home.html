@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>医疗管理系统</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" id="nav-doctor-info" href="#">医生信息管理</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav-patient-info" href="#">患者信息管理</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav-appointment" href="#">预约管理</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav-prescription" href="#">处方管理</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav-order" href="#">订单管理</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav-medicine" href="#">药品库存管理</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav-report" href="#">数据报表</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav-log" href="#">系统日志</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <!-- 这里添加你的内容 -->
+      <h1>欢迎来到医疗管理系统</h1>
+      <a id="logout" th:href="@{/logout}">Log Out</a>
+    </main>
+  </div>
+</div>
+<script>
+  $(document).ready(function() {
+    $('.nav-link').click(function(event) {
+      event.preventDefault();
+      // 在这里你可以添加你的ajax请求到你的springboot后端
+      console.log($(this).attr('id')+'被点击');
+    });
+  });
+</script>
+</body>
+</html>

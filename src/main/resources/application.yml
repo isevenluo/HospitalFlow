@@ -1,0 +1,10 @@
+# swagger-ui custom path
+springdoc:
+  swagger-ui:
+    path: 'swagger-ui'
+
+#spring:
+#  security:
+#    user:
+#      name: admin
+#      password: admin
