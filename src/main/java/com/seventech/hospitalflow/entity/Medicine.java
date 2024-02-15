@@ -1,13 +1,8 @@
 package com.seventech.hospitalflow.entity;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
-import java.time.Instant;
 import lombok.Data;
 
 /**
@@ -17,13 +12,9 @@ import lombok.Data;
 
 @Data
 @Entity // 表示是一个数据库关联的Java实体
-@Table(name = "medicine") // 指定表名字
-public class Medicine {
+@Table(name = "medicines") // 指定表名字
+public class Medicine extends BaseEntity{
 
-    @Id // 指定ID
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // 指定ID的生成规则
-    @Column(name = "id", nullable = false) // 指定Java字段和数据库表字段的名称映射
-    private Long id;
 
     @NotNull
     private String name;
@@ -32,7 +23,5 @@ public class Medicine {
 
     private Integer stock;
 
-    @Column(name = "created_time")
-    private Instant createdTime;
 
 }

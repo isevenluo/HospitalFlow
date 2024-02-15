@@ -30,7 +30,8 @@ public class SecurityConfiguration {
 		JsonFilter jsonFilter = new JsonFilter();
 		jsonFilter.setAuthenticationSuccessHandler((request, response, authentication) -> {
 			// 登录成功的回调
-			response.getWriter().write("login success!");
+			response.sendRedirect("/swagger-ui");
+			// response.getWriter().write("login success!");
 		});
 		// 给自己定义的JSON登录Filter添加认证管理器
 		jsonFilter.setAuthenticationManager(authenticationManager());
@@ -78,7 +79,7 @@ public class SecurityConfiguration {
 	@Bean
 	WebSecurityCustomizer webSecurityCustomizer() {
 		// 这里配置的就是不经过过滤器链
-		return web -> web.ignoring().requestMatchers("index.html");
+		return web -> web.ignoring().requestMatchers("index.html","swagger-ui.html");
 	}
 
 	@Bean

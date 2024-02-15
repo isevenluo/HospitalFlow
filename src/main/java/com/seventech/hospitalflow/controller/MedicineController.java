@@ -11,6 +11,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -20,13 +21,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Tag(name = "药品库存管理")
+@RequestMapping("/medicines")
 public class MedicineController {
 
     @Resource
     private MedicineRepository medicineRepository;
 
 
-    @PostMapping("/addMedicine")
+    @PostMapping
     @Operation(
         summary = "新增药品",
         description = "新增药品",
